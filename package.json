@@ -1,7 +1,7 @@
 {
   "name": "use-is-match-media",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@9.15.0",
   "description": "",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
