@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { useIsomorphicLayoutEffect } from "./useIsomorphicLayout";
+import { useState } from 'react'
+import { useIsomorphicLayoutEffect } from './useIsomorphicLayout'
 
 export function useIsMatchMedia(mediaQueryString: string) {
-  const [isMatch, setIsMatch] = useState(false);
+  const [isMatch, setIsMatch] = useState(false)
 
   useIsomorphicLayoutEffect(() => {
-    const mediaQueryList = window.matchMedia(mediaQueryString);
+    const mediaQueryList = window.matchMedia(mediaQueryString)
 
-    setIsMatch(mediaQueryList.matches);
+    setIsMatch(mediaQueryList.matches)
 
     const listener = (event: MediaQueryListEvent) => {
-      setIsMatch(event.matches);
-    };
+      setIsMatch(event.matches)
+    }
 
-    mediaQueryList.addEventListener("change", listener);
+    mediaQueryList.addEventListener('change', listener)
 
     return () => {
-      mediaQueryList.removeEventListener("change", listener);
-    };
-  }, [mediaQueryString]);
+      mediaQueryList.removeEventListener('change', listener)
+    }
+  }, [mediaQueryString])
 
-  return isMatch;
+  return isMatch
 }
